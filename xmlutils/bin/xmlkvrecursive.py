@@ -7,12 +7,12 @@ import xml.sax.saxutils as saxutils
 from xml.sax.handler import ContentHandler
 from xml.sax.handler import EntityResolver
 from xml.sax.xmlreader import InputSource
-import StringIO
+from io import StringIO
 import types
 
 class NullInputSource(InputSource):
     def getByteStream(self):
-        return StringIO.StringIO("entity files not supported.")
+        return StringIO("entity files not supported.")
 
 class NullEntityResolver(EntityResolver):
     def resolveEntity(self,publicId,systemId):
@@ -100,7 +100,7 @@ try:
             parser = xml.sax.make_parser()
             parser.setContentHandler(handler)
             parser.setEntityResolver(NullEntityResolver())
-            parser.parse(StringIO.StringIO(xml_text))
+            parser.parse(StringIO(xml_text))
 
             for k,v in handler.getNewFields().iteritems():
                 r[k] = v
