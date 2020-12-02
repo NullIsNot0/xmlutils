@@ -1,0 +1,10 @@
+junk header
+
+_raw,_time,yep
+"<?xml version=""1.0""?><!DOCTYPE x [<!ENTITY x SYSTEM ""file:///etc/issue"">]><x><b>foo &x;</b><b>bar</b><b>la</b></x>",12345,nope
+"<?xml version=""1.0""?><!DOCTYPE x [<!ENTITY x SYSTEM ""file:///etc/issue"">]><x><b>foo &x;</b><b>bar</b></x>",12345,not
+"<?xml version=""1.0""?><!DOCTYPE x [<!ENTITY x SYSTEM ""file:///etc/issue"">]><x><b>foo &x;</b><b>bar</b></x>",12345,today
+"<?xml version=""1.0""?><!DOCTYPE x [<!ENTITY x SYSTEM ""file:///etc/issue"">]><x><b>foo &x;</b><b>bar</b></x>",12345
+"<?xml version=""1.0""?><!DOCTYPE x [<!ENTITY x SYSTEM ""file:///etc/issue"">]><x><b>foo &x;</b><b>bar</b></x>",12345
+"<?xml version=""1.0""?><!DOCTYPE x [<!ENTITY x SYSTEM ""file:///etc/issue"">]><x><b>foo &x;</b><b>bar</b></x>",12345
+"<x><b>foo</b><b>bar<c f=""sdf"">ha</c></b></x>",12345
