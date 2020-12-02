@@ -1,3 +1,5 @@
+App on SplunkBase: [https://splunkbase.splunk.com/app/455](https://splunkbase.splunk.com/app/455/).
+
 xmlutils provides a few commands for working with xml documents. xmlkv and xpath can accomplish most tasks, these are simply alternatives.
 
 These commands will work on a field called "xml" if found, otherwise _raw.
