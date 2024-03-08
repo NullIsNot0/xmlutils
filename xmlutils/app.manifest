@@ -5,7 +5,7 @@
     "id": {
       "group": null,
       "name": "xmlutils",
-      "version": "1.2.0"
+      "version": "1.2.2"
     },
     "author": [
       {
@@ -34,7 +34,7 @@
     },
     "releaseNotes": {
       "name": null,
-      "text": null,
+      "text": "./README.txt",
       "uri": null
     }
   },

@@ -2,7 +2,7 @@
 # Application-level permissions
 
 []
-access = read : [ * ], write : [ admin, power ]
+access = read : [ * ], write : [ admin, sc_admin, power ]
 
 [viewstates]
 access = read : [ * ], write : [ * ]
@@ -12,7 +12,7 @@ export = system
 
 [commands]
 export = system
-access = read : [ * ], write : [ admin ]
+access = read : [ * ], write : [ admin, sc_admin ]
 
 [searchbnf]
 export = system
