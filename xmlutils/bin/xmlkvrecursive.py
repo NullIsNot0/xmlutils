@@ -1,14 +1,12 @@
 # Copyright (C) 2010 Splunk Inc.  All Rights Reserved.  Version 4.0
 import sys,splunk.Intersplunk
 import re
-import urllib
 import xml.sax
 import xml.sax.saxutils as saxutils
 from xml.sax.handler import ContentHandler
 from xml.sax.handler import EntityResolver
 from xml.sax.xmlreader import InputSource
 from io import StringIO
-import types
 
 class NullInputSource(InputSource):
     def getByteStream(self):
@@ -38,7 +36,7 @@ class XmlHandler(ContentHandler):
             if dest_key in self.new_fields:
                 self.new_fields['multi values'] = 'yep'
                 #this is only the second value, so convert value to a list
-                if type(self.new_fields[dest_key]) is not types.ListType:
+                if not isinstance(self.new_fields[dest_key], list):
                     self.new_fields[dest_key] = [self.new_fields[dest_key]]
                 #append the value to the list
                 self.new_fields[dest_key].append(str(value))
@@ -66,7 +64,7 @@ class XmlHandler(ContentHandler):
                 self.setValue( attrs.getValue(k), "-" + k )
 
     def characters(self, content):
-        if content is not None and content.strip() is not '':
+        if content is not None and content.strip() != '':
             self.setValue( content.strip() )
 
     def endElement(self, name):
@@ -102,7 +100,7 @@ try:
             parser.setEntityResolver(NullEntityResolver())
             parser.parse(StringIO(xml_text))
 
-            for k,v in handler.getNewFields().iteritems():
+            for k,v in handler.getNewFields().items():
                 r[k] = v
         except:
             import traceback
